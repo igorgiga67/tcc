@@ -1,3 +1,5 @@
 export * from './categoriaEntity'
 export * from './unidadeMedidaEntity'
 export * from './clientesEntity'
+export * from './produtoEntity'
+export * from './vendasEntity'

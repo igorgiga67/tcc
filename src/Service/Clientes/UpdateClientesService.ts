@@ -1,14 +1,15 @@
 import { ClientesRepository } from "../../Database/Repository"
 
 export class UpdateClientesService {
-    async update( descricao: string, id: string): Promise< any> {
+    async update( nome: string, id: string, telefone: string): Promise< any> {
         const idConvert = +id
         const repo = ClientesRepository()
         const clientes = await repo.findOne({ where: { id : idConvert } })
         if (!clientes) {
-            return new Error('Não foi possivel encontrar categoria.')
+            return new Error('Não foi possivel encontrar o cliente.')
         }
-        clientes.descricao = descricao
+        clientes.nome = nome
+        clientes.telefone = telefone
         const result = await repo.save(clientes)
         return result
     }

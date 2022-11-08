@@ -6,7 +6,7 @@ export class DeleteUnidadeMedidaService {
         const IdConvert: number = +id
         console.log(IdConvert)
         if (!await repo.findOne({ where: { id: IdConvert } })) {
-            return new Error('Não foi possivel encontrar categoria')
+            return new Error('Não foi possivel encontrar a unidade de medida')
         }
         await repo.delete(id)
     }

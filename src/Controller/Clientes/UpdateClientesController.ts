@@ -4,10 +4,10 @@ import { UpdateClientesService } from '../../Service/Clientes'
 export class UpdateClientesController {
     async handle(request: Request, response: Response) {
         try {
-            const { descricao } = request.body
+            const { nome, telefone } = request.body
             const { id } = request.params
             const createService = new UpdateClientesService()
-            const result = await createService.update( descricao, id )
+            const result = await createService.update( nome, id, telefone )
             if (result instanceof Error) {
                 return response.status(400).json(result.message)
             }

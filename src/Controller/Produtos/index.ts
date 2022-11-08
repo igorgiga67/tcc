@@ -1,0 +1,5 @@
+export * from './CreateProdutosController'
+export * from './DeleteProdutosController'
+export * from './ListarProdutosController'
+export * from './UpdateProdutosController'
+export * from './ListarByIdProdutosController'

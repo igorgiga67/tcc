@@ -6,7 +6,7 @@ export class UpdateUnidadeMedidaService {
         const repo = UnidadeMedidaRepository()
         const unidadeMedida = await repo.findOne({ where: { id : idConvert } })
         if (!unidadeMedida) {
-            return new Error('Não foi possivel encontrar categoria.')
+            return new Error('Não foi possivel encontrar a unidade de medida.')
         }
         unidadeMedida.descricao = descricao
         const result = await repo.save(unidadeMedida)

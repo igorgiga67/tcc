@@ -1,11 +1,11 @@
 import { Request, Response } from 'express'
-import { CreateCategoriaService } from '../../Service/Categoria'
+import { CreateVendasService } from '../../Service/Vendas'
 
-export class CreateCategoriaController {
+export class CreateVendasController {
     async handle(request: Request, response: Response) {
         try {
             const { descricao } = request.body
-            const createService = new CreateCategoriaService()
+            const createService = new CreateVendasService()
             const result = await createService.create( descricao )
             if (result instanceof Error) {
                 return response.status(400).json(result.message)

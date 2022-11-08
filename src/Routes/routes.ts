@@ -1,9 +1,9 @@
 import { Router } from 'express'
-import { categoriaRoutes } from './'
-import { unidadeMedidaRoutes } from './'
-import { clientesRoutes } from './'
+import { produtosRoutes, clientesRoutes, unidadeMedidaRoutes, categoriaRoutes, vendasRoutes } from './'
 
  export const routes = Router()
  routes.use('/categoria', categoriaRoutes)
- routes.use('/unidadeMedida', unidadeMedidaRoutes)
+ routes.use('/unidade_medida', unidadeMedidaRoutes)
  routes.use('/clientes', clientesRoutes)
+ routes.use('/produtos', produtosRoutes)
+ routes.use('/vendas', vendasRoutes)

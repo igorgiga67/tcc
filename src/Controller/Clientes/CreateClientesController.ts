@@ -4,9 +4,9 @@ import { CreateClientesService } from '../../Service/Clientes'
 export class CreateClientesController {
     async handle(request: Request, response: Response) {
         try {
-            const { descricao } = request.body
+            const { nome, telefone } = request.body
             const createService = new CreateClientesService()
-            const result = await createService.create( descricao )
+            const result = await createService.create( nome, telefone )
             if (result instanceof Error) {
                 return response.status(400).json(result.message)
             }
